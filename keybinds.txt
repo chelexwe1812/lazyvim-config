@@ -1,0 +1,20 @@
+--[
+	USEFUL KEYBINDS
+a = add
+i = insert
+p = pegar texto de la papelera
+y = para copiar el texto selecionado
+yy = para copiar la toda la linea
+space+s+f = buscar archivos con Telescope
+gc = comentar texto selecionado
+gg = ir al cominezo del archivo
+G = ir al final del archivo
+
+:q = salir
+:w = guardar
+:qa = salir de todas las ventanas
+:qw = salir y guardar
+:q! = salir sin guardar
+:(numero de la linea) = go to line
+:Telescope colorscheme = ver los temas instalados (no se guarda la configuracion, para hacerlo tienes q darle prioridad al tema en su configuracion o comentar todos execpto el q quieres usar)
+]--
