@@ -885,6 +885,7 @@ require("lazy").setup({
 		end,
 	},
 	-- end themes configuration
+	-- vim-move para mover l’neas de c—digo
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
