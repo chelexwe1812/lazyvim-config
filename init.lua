@@ -800,17 +800,41 @@ require("lazy").setup({
 	-- 		vim.cmd.colorscheme("everforest")
 	-- 	end,
 	-- },
+	-- {
+	-- 	"sainnhe/sonokai",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- Optionally configure and load the colorscheme
+	-- 		-- directly inside the plugin declaration.
+	-- 		vim.g.sonokai_enable_italic = true
+	-- 		vim.cmd.colorscheme("sonokai")
+	-- 	end,
+	-- },
+	-- NOTE Agrega Nightfox theme
 	{
-		"sainnhe/sonokai",
-		lazy = false,
-		priority = 1000,
+		"EdenEast/nightfox.nvim",
 		config = function()
-			-- Optionally configure and load the colorscheme
-			-- directly inside the plugin declaration.
-			vim.g.sonokai_enable_italic = true
-			vim.cmd.colorscheme("sonokai")
+			-- Configura el tema aqu’ si es necesario
+			require("nightfox").setup({
+				options = {
+					-- Opciones de configuraci—n del tema
+				},
+			})
+
+			-- Establecer la variante Nordfox
+			vim.cmd("colorscheme nordfox")
 		end,
 	},
+	-- {
+	-- 	"navarasu/onedark.nvim",
+	-- 	config = function()
+	-- 		require("onedark").setup({
+	-- 			style = "cool", -- Puedes cambiar el estilo a 'darker', 'cool', 'warmer', etc.
+	-- 		})
+	-- 		require("onedark").load()
+	-- 	end,
+	-- },
 	-- Nordic theme config
 	-- {
 	-- 	"AlexvZyl/nordic.nvim",

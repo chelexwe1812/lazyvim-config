@@ -9,6 +9,13 @@ space+s+f = buscar archivos con Telescope
 gc = comentar texto selecionado
 gg = ir al cominezo del archivo
 G = ir al final del archivo
+gd = go to definition (variables y funciones)
+
+
+--Navegacion entre ventanas
+:sp = abrir ventana horizontal
+:vsp = abrir ventana vertical
+:close = cerar ventana actual
 
 :q = salir
 :w = guardar
@@ -17,4 +24,8 @@ G = ir al final del archivo
 :q! = salir sin guardar
 :(numero de la linea) = go to line
 :Telescope colorscheme = ver los temas instalados (no se guarda la configuracion, para hacerlo tienes q darle prioridad al tema en su configuracion o comentar todos execpto el q quieres usar)
+
+
+space +s+f = seach files con telescope
+
 ]--
