@@ -1,55 +1,8 @@
 --[[
 
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-========                                    .-----.          ========
-========         .----------------------.   | === |          ========
-========         |.-""""""""""""""""""-.|   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||   KICKSTART.NVIM   ||   |-----|          ========
-========         ||                    ||   | === |          ========
-========         ||                    ||   |-----|          ========
-========         ||:Tutor              ||   |:::::|          ========
-========         |'-..................-'|   |____o|          ========
-========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
-========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
-========                                                     ========
-=====================================================================
-=====================================================================
-
-What is Kickstart?
-
-  Kickstart.nvim is *not* a distribution.
-
-  Kickstart.nvim is a starting point for your own configuration.
-    The goal is that you can read every line of code, top-to-bottom, understand
-    what your configuration is doing, and modify it to suit your needs.
-
-    Once you've done that, you can start exploring, configuring and tinkering to
-    make Neovim your own! That might mean leaving Kickstart just the way it is for a while
-    or immediately breaking it into modular pieces. It's up to you!
-
-    If you don't know anything about Lua, I recommend taking some time to read through
-    a guide. One possible example which will only take 10-15 minutes:
-      - https://learnxinyminutes.com/docs/lua/
-
-    After understanding a bit more about Lua, you can use `:help lua-guide` as a
-    reference for how Neovim integrates Lua.
-    - :help lua-guide
-    - (or HTML version): https://neovim.io/doc/user/lua-guide.html
-
 Kickstart Guide:
 
   TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
-
-    If you don't know what this means, type the following:
-      - <escape key>
-      - :
-      - Tutor
-      - <enter key>
 
     (If you already know the Neovim basics, you can skip this step.)
 
@@ -100,14 +53,12 @@ vim.g.have_nerd_font = false
 
 -- Make line numbers default
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
--- Enable mouse mode, can be useful for resizing splits for example!
+-- Enable mouse mode
 vim.opt.mouse = "a"
 
--- Don't show the mode, since it's already in the status line
+-- Don't show the mode
 vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
@@ -849,17 +800,17 @@ require("lazy").setup({
 	-- 		vim.cmd.colorscheme("everforest")
 	-- 	end,
 	-- },
-	-- {
-	-- 	"sainnhe/sonokai",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		-- Optionally configure and load the colorscheme
-	-- 		-- directly inside the plugin declaration.
-	-- 		vim.g.sonokai_enable_italic = true
-	-- 		vim.cmd.colorscheme("sonokai")
-	-- 	end,
-	-- },
+	{
+		"sainnhe/sonokai",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.sonokai_enable_italic = true
+			vim.cmd.colorscheme("sonokai")
+		end,
+	},
 	-- Nordic theme config
 	-- {
 	-- 	"AlexvZyl/nordic.nvim",
@@ -877,15 +828,14 @@ require("lazy").setup({
 	-- 		vim.cmd([[colorscheme mellow]])
 	-- 	end,
 	-- },
-	{
-		"rmehri01/onenord.nvim",
-		config = function()
-			require("onenord").setup()
-			vim.cmd("colorscheme onenord")
-		end,
-	},
+	-- {
+	-- 	"rmehri01/onenord.nvim",
+	-- 	config = function()
+	-- 		require("onenord").setup()
+	-- 		vim.cmd("colorscheme onenord")
+	-- 	end,
+	-- },
 	-- end themes configuration
-	-- vim-move para mover l’neas de c—digo
 	-- Highlight todo, notes, etc in comments
 	{
 		"folke/todo-comments.nvim",
