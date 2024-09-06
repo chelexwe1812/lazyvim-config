@@ -46,6 +46,8 @@ vim.g.maplocalleader = " "
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Fondo transparente
+vim.cmd("hi Normal guibg=NONE ctermbg=NONE")
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
@@ -812,18 +814,69 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE Agrega Nightfox theme
+	-- {
+	-- 	"EdenEast/nightfox.nvim",
+	-- 	config = function()
+	-- 		-- Configura el tema aqu’ si es necesario
+	-- 		require("nightfox").setup({
+	-- 			options = {
+	-- 				-- Opciones de configuraci—n del tema
+	-- 				transparent_mode = true,
+	-- 			},
+	-- 		})
+	--
+	-- 		-- Establecer la variante Nordfox
+	-- 		vim.cmd("colorscheme nordfox")
+	-- 	end,
+	-- },
+	-- Flow colorshceme
+	-- {
+	--   "0xstepit/flow.nvim",
+	--   lazy = false,
+	--   priority = 1000,
+	--   opts = {},
+	--   config = function()
+	--     require("flow").setup{
+	--       transparent = true, -- Set transparent background.
+	--       fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
+	--       mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
+	--       aggressive_spell = false, -- Display colors for spell check.
+	--     }
+	--
+	--     vim.cmd "colorscheme flow"
+	--   end,
+	-- },
+	-- Kanagawa theme
 	{
-		"EdenEast/nightfox.nvim",
-		config = function()
-			-- Configura el tema aqu’ si es necesario
-			require("nightfox").setup({
-				options = {
-					-- Opciones de configuraci—n del tema
+		"rebelot/kanagawa.nvim",
+		config = function() -- Default options:
+			require("kanagawa").setup({
+				compile = false, -- enable compiling the colorscheme
+				undercurl = true, -- enable undercurls
+				commentStyle = { italic = true },
+				functionStyle = {},
+				keywordStyle = { italic = true },
+				statementStyle = { bold = true },
+				typeStyle = {},
+				transparent = false, -- do not set background color
+				dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+				terminalColors = true, -- define vim.g.terminal_color_{0,17}
+				colors = { -- add/modify theme and palette colors
+					palette = {},
+					theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+				},
+				overrides = function(colors) -- add/modify highlights
+					return {}
+				end,
+				theme = "wave", -- Load "wave" theme when 'background' option is not set
+				background = { -- map the value of 'background' option to a theme
+					dark = "wave", -- try "dragon" !
+					light = "lotus",
 				},
 			})
 
-			-- Establecer la variante Nordfox
-			vim.cmd("colorscheme nordfox")
+			-- setup must be called before loading
+			vim.cmd("colorscheme kanagawa-dragon")
 		end,
 	},
 	-- Agregar one-vim theme
