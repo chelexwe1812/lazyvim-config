@@ -44,7 +44,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -826,6 +826,43 @@ require("lazy").setup({
 			vim.cmd("colorscheme nordfox")
 		end,
 	},
+	-- Agregar one-vim theme
+	-- {
+	-- 	"rakr/vim-one",
+	-- 	config = function()
+	-- 		-- Aplica el tema de One Vim
+	-- 		vim.g.one_allow_italics = 1
+	-- 		vim.cmd("colorscheme one")
+	-- 	end,
+	-- },-- Agregar Gruvbox theme
+	-- {
+	-- 	"ellisonleao/gruvbox.nvim",
+	-- 	config = function()
+	-- 		require("gruvbox").setup({
+	-- 			contrast = "hard", -- Opci—n: 'soft', 'medium', 'hard'
+	-- 			transparent_mode = true, -- Si quieres fondo transparente
+	-- 		})
+	-- 		vim.cmd("colorscheme gruvbox")
+	-- 	end,
+	-- },
+	-- Catppucin theme
+	-- {
+	--   "catppuccin/nvim",
+	--   name = "catppuccin",
+	--   config = function()
+	--     require("catppuccin").setup({
+	--       flavour = "mocha", -- Puedes cambiar a 'latte', 'frappe', 'macchiato', o 'mocha'
+	--       integrations = {
+	--         nvimtree = true,
+	--         telescope = true,
+	--         -- Elimina la l’nea de lualine si da problemas
+	--         -- lualine = true,
+	--         -- Habilita m‡s integraciones si es necesario
+	--       },
+	--     })
+	--     vim.cmd("colorscheme catppuccin")
+	--   end,
+	-- },
 	-- {
 	-- 	"navarasu/onedark.nvim",
 	-- 	config = function()
