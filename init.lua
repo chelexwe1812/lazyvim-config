@@ -137,6 +137,12 @@ vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" }
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
+-- Borrar lineas sin copiarlas
+vim.keymap.set("n", "d", '"_d')
+vim.keymap.set("v", "d", '"_d')
+vim.keymap.set("n", "dd", '"_dd')
+vim.keymap.set("v", "dd", '"_dd')
+
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
