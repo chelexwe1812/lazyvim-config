@@ -816,21 +816,21 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE Agrega Nightfox theme
-	-- {
-	-- 	"EdenEast/nightfox.nvim",
-	-- 	config = function()
-	-- 		-- Configura el tema aqu’ si es necesario
-	-- 		require("nightfox").setup({
-	-- 			options = {
-	-- 				-- Opciones de configuraci—n del tema
-	-- 				transparent_mode = true,
-	-- 			},
-	-- 		})
-	--
-	-- 		-- Establecer la variante Nordfox
-	-- 		vim.cmd("colorscheme nordfox")
-	-- 	end,
-	-- },
+	{
+		"EdenEast/nightfox.nvim",
+		config = function()
+			-- Configura el tema aqu’ si es necesario
+			require("nightfox").setup({
+				options = {
+					-- Opciones de configuraci—n del tema
+					transparent_mode = true,
+				},
+			})
+
+			-- Establecer la variante Nordfox
+			vim.cmd("colorscheme nordfox")
+		end,
+	},
 	-- Flow colorshceme
 	-- {
 	--   "0xstepit/flow.nvim",
@@ -904,23 +904,23 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- Catppucin theme
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha", -- Puedes cambiar a 'latte', 'frappe', 'macchiato', o 'mocha'
-				integrations = {
-					nvimtree = true,
-					telescope = true,
-					-- Elimina la l’nea de lualine si da problemas
-					-- lualine = true,
-					-- Habilita m‡s integraciones si es necesario
-				},
-			})
-			vim.cmd("colorscheme catppuccin")
-		end,
-	},
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	config = function()
+	-- 		require("catppuccin").setup({
+	-- 			flavour = "mocha", -- Puedes cambiar a 'latte', 'frappe', 'macchiato', o 'mocha'
+	-- 			integrations = {
+	-- 				nvimtree = true,
+	-- 				telescope = true,
+	-- 				-- Elimina la l’nea de lualine si da problemas
+	-- 				-- lualine = true,
+	-- 				-- Habilita m‡s integraciones si es necesario
+	-- 			},
+	-- 		})
+	-- 		vim.cmd("colorscheme catppuccin")
+	-- 	end,
+	-- },
 	-- {
 	-- 	"navarasu/onedark.nvim",
 	-- 	config = function()
