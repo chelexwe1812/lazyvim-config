@@ -143,6 +143,9 @@ vim.keymap.set("v", "d", '"_d')
 vim.keymap.set("n", "dd", '"_dd')
 vim.keymap.set("v", "dd", '"_dd')
 
+-- Mapeo del atajo para abrir y cerrar nvim-tree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
@@ -202,6 +205,28 @@ require("lazy").setup({
 	--    require('gitsigns').setup({ ... })
 	--
 	-- See `:help gitsigns` to understand what the configuration keys do
+	-- nvim tree para ver el arbol de archivos
+	{
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- Opcional, para iconos bonitos
+		},
+		config = function()
+			require("nvim-tree").setup({
+				view = {
+					width = 30, -- Ajusta el ancho de la ventana
+					side = "left", -- Elige el lado donde aparecer‡ el ‡rbol
+				},
+				filters = {
+					dotfiles = false, -- Mostrar archivos ocultos
+				},
+				renderer = {
+					highlight_opened_files = "name",
+					group_empty = true, -- Agrupa carpetas vac’as
+				},
+			})
+		end,
+	},
 	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -821,22 +846,30 @@ require("lazy").setup({
 	-- 		vim.cmd.colorscheme("sonokai")
 	-- 	end,
 	-- },
+	-- Mellow theme
+	-- {
+	-- 	"mellow-theme/mellow.nvim",
+	-- 	config = function()
+	-- 		-- Lua
+	-- 		vim.cmd([[colorscheme mellow]])
+	-- 	end,
+	-- },
 	-- NOTE Agrega Nightfox theme
-	{
-		"EdenEast/nightfox.nvim",
-		config = function()
-			-- Configura el tema aqu’ si es necesario
-			require("nightfox").setup({
-				options = {
-					-- Opciones de configuraci—n del tema
-					transparent_mode = true,
-				},
-			})
-
-			-- Establecer la variante Nordfox
-			vim.cmd("colorscheme nordfox")
-		end,
-	},
+	-- {
+	-- 	"EdenEast/nightfox.nvim",
+	-- 	config = function()
+	-- 		-- Configura el tema aqu’ si es necesario
+	-- 		require("nightfox").setup({
+	-- 			options = {
+	-- 				-- Opciones de configuraci—n del tema
+	-- 				transparent_mode = true,
+	-- 			},
+	-- 		})
+	--
+	-- 		-- Establecer la variante Nordfox
+	-- 		vim.cmd("colorscheme nordfox")
+	-- 	end,
+	-- },
 	-- Flow colorshceme
 	-- {
 	--   "0xstepit/flow.nvim",
@@ -855,41 +888,41 @@ require("lazy").setup({
 	--   end,
 	-- },
 	-- Kanagawa theme
-	-- {
-	-- 	"rebelot/kanagawa.nvim",
-	-- 	config = function() -- Default options:
-	-- 		require("kanagawa").setup({
-	-- 			compile = false, -- enable compiling the colorscheme
-	-- 			undercurl = true, -- enable undercurls
-	-- 			commentStyle = { italic = true },
-	-- 			functionStyle = {},
-	-- 			keywordStyle = { italic = true },
-	-- 			statementStyle = { bold = true },
-	-- 			typeStyle = {},
-	-- 			transparent = true, -- do not set background color
-	-- 			dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-	-- 			terminalColors = true, -- define vim.g.terminal_color_{0,17}
-	-- 			colors = { -- add/modify theme and palette colors
-	-- 				palette = {},
-	-- 				theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-	-- 			},
-	-- 			overrides = function(colors) -- add/modify highlights
-	-- 				return {}
-	-- 			end,
-	-- 			theme = "wave", -- Load "wave" theme when 'background' option is not set
-	-- 			background = { -- map the value of 'background' option to a theme
-	-- 				dark = "wave", -- try "dragon" !
-	-- 				light = "lotus",
-	-- 			},
-	-- 			options = {
-	-- 				transparent_mode = true,
-	-- 			},
-	-- 		})
-	--
-	-- 		-- setup must be called before loading
-	-- 		vim.cmd("colorscheme kanagawa-dragon")
-	-- 	end,
-	-- },
+	{
+		"rebelot/kanagawa.nvim",
+		config = function() -- Default options:
+			require("kanagawa").setup({
+				compile = false, -- enable compiling the colorscheme
+				undercurl = true, -- enable undercurls
+				commentStyle = { italic = true },
+				functionStyle = {},
+				keywordStyle = { italic = true },
+				statementStyle = { bold = true },
+				typeStyle = {},
+				transparent = true, -- do not set background color
+				dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+				terminalColors = true, -- define vim.g.terminal_color_{0,17}
+				colors = { -- add/modify theme and palette colors
+					palette = {},
+					theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+				},
+				overrides = function(colors) -- add/modify highlights
+					return {}
+				end,
+				theme = "wave", -- Load "wave" theme when 'background' option is not set
+				background = { -- map the value of 'background' option to a theme
+					dark = "wave", -- try "dragon" !
+					light = "lotus",
+				},
+				options = {
+					transparent_mode = true,
+				},
+			})
+
+			-- setup must be called before loading
+			vim.cmd("colorscheme kanagawa-dragon")
+		end,
+	},
 	-- Agregar one-vim theme
 	-- {
 	-- 	"rakr/vim-one",
@@ -903,7 +936,7 @@ require("lazy").setup({
 	-- 	"ellisonleao/gruvbox.nvim",
 	-- 	config = function()
 	-- 		require("gruvbox").setup({
-	-- 			contrast = "hard", -- Opci—n: 'soft', 'medium', 'hard'
+	-- 			contrast = "hard", -- Opcion: 'soft', 'medium', 'hard'
 	-- 			transparent_mode = true, -- Si quieres fondo transparente
 	-- 		})
 	-- 		vim.cmd("colorscheme gruvbox")
