@@ -177,6 +177,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
+require("config.keymaps")
 
 -- [[ Configure and install plugins ]]
 --
@@ -212,6 +213,9 @@ require("lazy").setup({
 			"nvim-tree/nvim-web-devicons", -- Opcional, para iconos bonitos
 		},
 		config = function()
+			-- disable netrw at the very start of your init.lua
+			vim.g.loaded_netrw = 1
+			vim.g.loaded_netrwPlugin = 1
 			require("nvim-tree").setup({
 				view = {
 					width = 30, -- Ajusta el ancho de la ventana
@@ -224,6 +228,10 @@ require("lazy").setup({
 					highlight_opened_files = "name",
 					group_empty = true, -- Agrupa carpetas vac’as
 				},
+				-- Configuración para no abrir nvim-tree automáticamente al iniciar
+				-- open_on_setup = false,
+				-- open_on_setup_file = false,
+				open_on_tab = false,
 			})
 		end,
 	},
@@ -855,21 +863,21 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE Agrega Nightfox theme
-	{
-		"EdenEast/nightfox.nvim",
-		config = function()
-			-- Configura el tema aqu’ si es necesario
-			require("nightfox").setup({
-				options = {
-					-- Opciones de configuraci—n del tema
-					transparent_mode = true,
-				},
-			})
-
-			-- Establecer la variante Nordfox
-			vim.cmd("colorscheme nordfox")
-		end,
-	},
+	-- {
+	-- 	"EdenEast/nightfox.nvim",
+	-- 	config = function()
+	-- 		-- Configura el tema aqu’ si es necesario
+	-- 		require("nightfox").setup({
+	-- 			options = {
+	-- 				-- Opciones de configuraci—n del tema
+	-- 				transparent_mode = true,
+	-- 			},
+	-- 		})
+	--
+	-- 		-- Establecer la variante Nordfox
+	-- 		vim.cmd("colorscheme nordfox")
+	-- 	end,
+	-- },
 	-- Flow colorshceme
 	-- {
 	--   "0xstepit/flow.nvim",
@@ -994,6 +1002,28 @@ require("lazy").setup({
 	-- 		vim.cmd("colorscheme onenord")
 	-- 	end,
 	-- },
+	-- NOTE: Artic theme
+	-- {
+	-- 	"rockyzhang24/arctic.nvim",
+	-- 	dependencies = { "rktjmp/lush.nvim" },
+	-- 	name = "arctic",
+	-- 	branch = "main",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme arctic")
+	-- 	end,
+	-- },
+	-- NOTE: Juliana theme
+	{
+		"kaiuri/nvim-juliana",
+		lazy = false,
+		opts = { --[=[ configuration --]=]
+		},
+		-- config = true,
+		config = function()
+			vim.cmd("colorscheme juliana")
+		end,
+	},
 	-- end themes configuration
 	-- Highlight todo, notes, etc in comments
 	{
