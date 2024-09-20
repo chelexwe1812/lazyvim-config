@@ -144,7 +144,7 @@ vim.keymap.set("n", "dd", '"_dd')
 vim.keymap.set("v", "dd", '"_dd')
 
 -- Mapeo del atajo para abrir y cerrar nvim-tree
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
@@ -207,34 +207,34 @@ require("lazy").setup({
 	--
 	-- See `:help gitsigns` to understand what the configuration keys do
 	-- nvim tree para ver el arbol de archivos
-	{
-		"nvim-tree/nvim-tree.lua",
-		requires = {
-			"nvim-tree/nvim-web-devicons", -- Opcional, para iconos bonitos
-		},
-		config = function()
-			-- disable netrw at the very start of your init.lua
-			vim.g.loaded_netrw = 1
-			vim.g.loaded_netrwPlugin = 1
-			require("nvim-tree").setup({
-				view = {
-					width = 30, -- Ajusta el ancho de la ventana
-					side = "left", -- Elige el lado donde aparecer‡ el ‡rbol
-				},
-				filters = {
-					dotfiles = false, -- Mostrar archivos ocultos
-				},
-				renderer = {
-					highlight_opened_files = "name",
-					group_empty = true, -- Agrupa carpetas vac’as
-				},
-				-- Configuración para no abrir nvim-tree automáticamente al iniciar
-				-- open_on_setup = false,
-				-- open_on_setup_file = false,
-				open_on_tab = false,
-			})
-		end,
-	},
+	-- {
+	-- 	"nvim-tree/nvim-tree.lua",
+	-- 	requires = {
+	-- 		"nvim-tree/nvim-web-devicons", -- Opcional, para iconos bonitos
+	-- 	},
+	-- 	config = function()
+	-- 		-- disable netrw at the very start of your init.lua
+	-- 		vim.g.loaded_netrw = 1
+	-- 		vim.g.loaded_netrwPlugin = 1
+	-- 		require("nvim-tree").setup({
+	-- 			view = {
+	-- 				width = 30, -- Ajusta el ancho de la ventana
+	-- 				side = "left", -- Elige el lado donde aparecer‡ el ‡rbol
+	-- 			},
+	-- 			filters = {
+	-- 				dotfiles = false, -- Mostrar archivos ocultos
+	-- 			},
+	-- 			renderer = {
+	-- 				highlight_opened_files = "name",
+	-- 				group_empty = true, -- Agrupa carpetas vac’as
+	-- 			},
+	-- 			-- Configuración para no abrir nvim-tree automáticamente al iniciar
+	-- 			-- open_on_setup = false,
+	-- 			-- open_on_setup_file = false,
+	-- 			open_on_tab = false,
+	-- 		})
+	-- 	end,
+	-- },
 	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
@@ -820,17 +820,8 @@ require("lazy").setup({
 			})
 		end,
 	},
-	-- Themes scheme
-	-- { -- You can easily change to a different colorscheme.
-	-- 	"folke/tokyonight.nvim",
-	-- 	priority = 1000, -- Make sure to load this before all the other start plugins.
-	-- 	init = function()
-	-- 		vim.cmd.colorscheme("tokyonight-night")
-	--
-	-- 		vim.cmd.hi("Comment gui=none")
-	-- 	end,
-	-- },
-	-- Everforest theme
+	-- NOTE: Themes scheme
+	-- NOTE: Everforest theme
 	-- {
 	-- 	"sainnhe/everforest",
 	-- 	lazy = false,
@@ -842,7 +833,7 @@ require("lazy").setup({
 	-- 		vim.cmd.colorscheme("everforest")
 	-- 	end,
 	-- },
-	-- Sonokai theme
+	-- NOTE: Sonokai theme
 	-- {
 	-- 	"sainnhe/sonokai",
 	-- 	lazy = false,
@@ -854,15 +845,7 @@ require("lazy").setup({
 	-- 		vim.cmd.colorscheme("sonokai")
 	-- 	end,
 	-- },
-	-- Mellow theme
-	-- {
-	-- 	"mellow-theme/mellow.nvim",
-	-- 	config = function()
-	-- 		-- Lua
-	-- 		vim.cmd([[colorscheme mellow]])
-	-- 	end,
-	-- },
-	-- NOTE Agrega Nightfox theme
+	-- NOTE: Agrega Nightfox theme
 	-- {
 	-- 	"EdenEast/nightfox.nvim",
 	-- 	config = function()
@@ -878,7 +861,7 @@ require("lazy").setup({
 	-- 		vim.cmd("colorscheme nordfox")
 	-- 	end,
 	-- },
-	-- Flow colorshceme
+	-- NOTE: Flow colorshceme
 	-- {
 	--   "0xstepit/flow.nvim",
 	--   lazy = false,
@@ -969,6 +952,7 @@ require("lazy").setup({
 	-- 		vim.cmd("colorscheme catppuccin")
 	-- 	end,
 	-- },
+	-- NOTE: Onedark theme
 	-- {
 	-- 	"navarasu/onedark.nvim",
 	-- 	config = function()
@@ -987,6 +971,7 @@ require("lazy").setup({
 	-- 		require("nordic").load()
 	-- 	end,
 	-- },
+	-- NOTE: Mellow theme
 	-- {
 	-- 	"kvrohit/mellow.nvim",
 	-- 	lazy = false, -- Para que el tema se cargue inmediatamente al iniciar Neovim
@@ -995,6 +980,7 @@ require("lazy").setup({
 	-- 		vim.cmd([[colorscheme mellow]])
 	-- 	end,
 	-- },
+	-- NOTE: Onenord theme
 	-- {
 	-- 	"rmehri01/onenord.nvim",
 	-- 	config = function()
