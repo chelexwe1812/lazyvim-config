@@ -2,6 +2,7 @@
 	USEFUL KEYBINDS
 a = add
 i = insert
+o = insertar linea debajo
 p = pegar texto de la papelera
 y = para copiar el texto selecionado
 yy = para copiar la toda la linea
@@ -11,11 +12,16 @@ gg = ir al cominezo del archivo
 G = ir al final del archivo
 gd = go to definition (variables y funciones)
 gr = buscar las referencias
+d = eliminar seleccion
+dd = eliminar toda la fila
 
---Navegacion entre ventanas
+
+--NOTE: Navegacion entre ventanas
 :sp = abrir ventana horizontal
 :vsp = abrir ventana vertical
 :close = cerar ventana actual
+control+l = cambiar ventana derecha
+control+h = cambiar ventana izquierda
 
 :q = salir
 :w = guardar
@@ -29,7 +35,8 @@ space + sk = muestra todos los comando q podemos usar con Telescope
 :Telescope help_tags = muestra todas las opciones para la configuiracion de nvim
 :terminal = abre una terminal dentro de nvim
 
-space +s+f = search files con telescope
-space +d+s = serach simbols
+space+s+f = search files con telescope
+space+d+s = serach simbols
+space+r+p = Copy relative path
 
 ]--
