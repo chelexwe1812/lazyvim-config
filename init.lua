@@ -846,21 +846,21 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Agrega Nightfox theme
-	-- {
-	-- 	"EdenEast/nightfox.nvim",
-	-- 	config = function()
-	-- 		-- Configura el tema aqu’ si es necesario
-	-- 		require("nightfox").setup({
-	-- 			options = {
-	-- 				-- Opciones de configuraci—n del tema
-	-- 				transparent_mode = true,
-	-- 			},
-	-- 		})
-	--
-	-- 		-- Establecer la variante Nordfox
-	-- 		vim.cmd("colorscheme nordfox")
-	-- 	end,
-	-- },
+	{
+		"EdenEast/nightfox.nvim",
+		config = function()
+			-- Configura el tema aqui si es necesario
+			require("nightfox").setup({
+				options = {
+					-- Opciones de configuracion del tema
+					transparent_mode = true,
+				},
+			})
+
+			-- Establecer la variante Nordfox
+			vim.cmd("colorscheme carbonfox")
+		end,
+	},
 	-- NOTE: Flow colorshceme
 	-- {
 	--   "0xstepit/flow.nvim",
@@ -1000,16 +1000,16 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Juliana theme
-	{
-		"kaiuri/nvim-juliana",
-		lazy = false,
-		opts = { --[=[ configuration --]=]
-		},
-		-- config = true,
-		config = function()
-			vim.cmd("colorscheme juliana")
-		end,
-	},
+	-- {
+	-- 	"kaiuri/nvim-juliana",
+	-- 	lazy = false,
+	-- 	opts = { --[=[ configuration --]=]
+	-- 	},
+	-- 	-- config = true,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme juliana")
+	-- 	end,
+	-- },
 	-- end themes configuration
 	-- Highlight todo, notes, etc in comments
 	{
