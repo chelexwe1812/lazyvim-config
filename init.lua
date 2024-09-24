@@ -846,21 +846,21 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Agrega Nightfox theme
-	{
-		"EdenEast/nightfox.nvim",
-		config = function()
-			-- Configura el tema aqui si es necesario
-			require("nightfox").setup({
-				options = {
-					-- Opciones de configuracion del tema
-					transparent_mode = true,
-				},
-			})
-
-			-- Establecer la variante Nordfox
-			vim.cmd("colorscheme carbonfox")
-		end,
-	},
+	-- {
+	-- 	"EdenEast/nightfox.nvim",
+	-- 	config = function()
+	-- 		-- Configura el tema aqui si es necesario
+	-- 		require("nightfox").setup({
+	-- 			options = {
+	-- 				-- Opciones de configuracion del tema
+	-- 				transparent_mode = true,
+	-- 			},
+	-- 		})
+	--
+	-- 		-- Establecer la variante Nordfox
+	-- 		vim.cmd("colorscheme carbonfox")
+	-- 	end,
+	-- },
 	-- NOTE: Flow colorshceme
 	-- {
 	--   "0xstepit/flow.nvim",
@@ -1010,6 +1010,17 @@ require("lazy").setup({
 	-- 		vim.cmd("colorscheme juliana")
 	-- 	end,
 	-- },
+	-- NOTE: VS code theme
+	{
+		"Mofiqul/vscode.nvim",
+		lazy = false,
+		opts = { --[=[ configuration --]=]
+		},
+		-- config = true,
+		config = function()
+			vim.cmd.colorscheme("vscode")
+		end,
+	},
 	-- end themes configuration
 	-- Highlight todo, notes, etc in comments
 	{
