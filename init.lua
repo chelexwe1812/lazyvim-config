@@ -1000,27 +1000,27 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Juliana theme
-	-- {
-	-- 	"kaiuri/nvim-juliana",
-	-- 	lazy = false,
-	-- 	opts = { --[=[ configuration --]=]
-	-- 	},
-	-- 	-- config = true,
-	-- 	config = function()
-	-- 		vim.cmd("colorscheme juliana")
-	-- 	end,
-	-- },
-	-- NOTE: VS code theme
 	{
-		"Mofiqul/vscode.nvim",
+		"kaiuri/nvim-juliana",
 		lazy = false,
 		opts = { --[=[ configuration --]=]
 		},
 		-- config = true,
 		config = function()
-			vim.cmd.colorscheme("vscode")
+			vim.cmd("colorscheme juliana")
 		end,
 	},
+	-- NOTE: VS code theme
+	-- {
+	-- 	"Mofiqul/vscode.nvim",
+	-- 	lazy = false,
+	-- 	opts = { --[=[ configuration --]=]
+	-- 	},
+	-- 	-- config = true,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("vscode")
+	-- 	end,
+	-- },
 	-- end themes configuration
 	-- Highlight todo, notes, etc in comments
 	{
