@@ -34,9 +34,10 @@ control+h = cambiar ventana izquierda
 space + sk = muestra todos los comando q podemos usar con Telescope
 :Telescope help_tags = muestra todas las opciones para la configuiracion de nvim
 :terminal = abre una terminal dentro de nvim
+:mason = instalar nuevo lenguaje de programacion
 
 space+s+f = search files con telescope
-space+d+s = serach simbols
+space+d+s = search simbols
 space+r+p = Copy relative path
 
 ]--

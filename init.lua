@@ -834,17 +834,23 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Sonokai theme
-	-- {
-	-- 	"sainnhe/sonokai",
-	-- 	lazy = false,
-	-- 	priority = 1000,
-	-- 	config = function()
-	-- 		-- Optionally configure and load the colorscheme
-	-- 		-- directly inside the plugin declaration.
-	-- 		vim.g.sonokai_enable_italic = true
-	-- 		vim.cmd.colorscheme("sonokai")
-	-- 	end,
-	-- },
+	{
+		"sainnhe/sonokai",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Habilitar itálicas
+			vim.g.sonokai_enable_italic = true
+
+			-- Establecer el fondo como transparente
+			vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+			vim.cmd("highlight NonText guibg=NONE ctermbg=NONE")
+			vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
+
+			-- Aplicar el esquema de colores
+			vim.cmd.colorscheme("sonokai")
+		end,
+	},
 	-- NOTE: Agrega Nightfox theme
 	-- {
 	-- 	"EdenEast/nightfox.nvim",
@@ -1000,16 +1006,16 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Juliana theme
-	{
-		"kaiuri/nvim-juliana",
-		lazy = false,
-		opts = { --[=[ configuration --]=]
-		},
-		-- config = true,
-		config = function()
-			vim.cmd("colorscheme juliana")
-		end,
-	},
+	-- {
+	-- 	"kaiuri/nvim-juliana",
+	-- 	lazy = false,
+	-- 	opts = { --[=[ configuration --]=]
+	-- 	},
+	-- 	-- config = true,
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme juliana")
+	-- 	end,
+	-- },
 	-- NOTE: VS code theme
 	-- {
 	-- 	"Mofiqul/vscode.nvim",
