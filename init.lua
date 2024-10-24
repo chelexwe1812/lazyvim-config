@@ -237,6 +237,7 @@ require("lazy").setup({
 	-- 		})
 	-- 	end,
 	-- },
+	-- NOTE: git lens config
 	{
 		"Eliot00/git-lens.vim",
 		lazy = true,
@@ -845,39 +846,39 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Sonokai theme
-	{
-		"sainnhe/sonokai",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			-- Habilitar itálicas
-			vim.g.sonokai_enable_italic = true
-
-			-- Establecer el fondo como transparente
-			vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
-			vim.cmd("highlight NonText guibg=NONE ctermbg=NONE")
-			vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
-
-			-- Aplicar el esquema de colores
-			vim.cmd.colorscheme("sonokai")
-		end,
-	},
-	-- NOTE: Agrega Nightfox theme
 	-- {
-	-- 	"EdenEast/nightfox.nvim",
+	-- 	"sainnhe/sonokai",
+	-- 	lazy = false,
+	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		-- Configura el tema aqui si es necesario
-	-- 		require("nightfox").setup({
-	-- 			options = {
-	-- 				-- Opciones de configuracion del tema
-	-- 				transparent_mode = true,
-	-- 			},
-	-- 		})
+	-- 		-- Habilitar itálicas
+	-- 		vim.g.sonokai_enable_italic = true
 	--
-	-- 		-- Establecer la variante Nordfox
-	-- 		vim.cmd("colorscheme carbonfox")
+	-- 		-- Establecer el fondo como transparente
+	-- 		vim.cmd("highlight Normal guibg=NONE ctermbg=NONE")
+	-- 		vim.cmd("highlight NonText guibg=NONE ctermbg=NONE")
+	-- 		vim.cmd("highlight NormalNC guibg=NONE ctermbg=NONE")
+	--
+	-- 		-- Aplicar el esquema de colores
+	-- 		vim.cmd.colorscheme("sonokai")
 	-- 	end,
 	-- },
+	-- NOTE: Agrega Nightfox theme
+	{
+		"EdenEast/nightfox.nvim",
+		config = function()
+			-- Configura el tema aqui si es necesario
+			require("nightfox").setup({
+				options = {
+					-- Opciones de configuracion del tema
+					transparent_mode = true,
+				},
+			})
+
+			-- Establecer la variante Nordfox
+			vim.cmd("colorscheme carbonfox")
+		end,
+	},
 	-- NOTE: Flow colorshceme
 	-- {
 	--   "0xstepit/flow.nvim",
