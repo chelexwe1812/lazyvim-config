@@ -864,37 +864,37 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Agrega Nightfox theme
-	{
-		"EdenEast/nightfox.nvim",
-		config = function()
-			-- Configura el tema aqui si es necesario
-			require("nightfox").setup({
-				options = {
-					-- Opciones de configuracion del tema
-					transparent_mode = true,
-				},
-			})
-
-			-- Establecer la variante Nordfox
-			vim.cmd("colorscheme carbonfox")
-		end,
-	},
+	-- {
+	-- 	"EdenEast/nightfox.nvim",
+	-- 	config = function()
+	-- 		-- Configura el tema aqui si es necesario
+	-- 		require("nightfox").setup({
+	-- 			options = {
+	-- 				-- Opciones de configuracion del tema
+	-- 				transparent_mode = true,
+	-- 			},
+	-- 		})
+	--
+	-- 		-- Establecer la variante Nordfox
+	-- 		vim.cmd("colorscheme carbonfox")
+	-- 	end,
+	-- },
 	-- NOTE: Flow colorshceme
 	-- {
-	--   "0xstepit/flow.nvim",
-	--   lazy = false,
-	--   priority = 1000,
-	--   opts = {},
-	--   config = function()
-	--     require("flow").setup{
-	--       transparent = true, -- Set transparent background.
-	--       fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
-	--       mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
-	--       aggressive_spell = false, -- Display colors for spell check.
-	--     }
+	-- 	"0xstepit/flow.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
+	-- 	config = function()
+	-- 		require("flow").setup({
+	-- 			transparent = true, -- Set transparent background.
+	-- 			fluo_color = "pink", --  Fluo color: pink, yellow, orange, or green.
+	-- 			mode = "normal", -- Intensity of the palette: normal, bright, desaturate, or dark. Notice that dark is ugly!
+	-- 			aggressive_spell = false, -- Display colors for spell check.
+	-- 		})
 	--
-	--     vim.cmd "colorscheme flow"
-	--   end,
+	-- 		vim.cmd("colorscheme flow")
+	-- 	end,
 	-- },
 	-- NOTE: Kanagawa theme
 	-- {
@@ -951,6 +951,14 @@ require("lazy").setup({
 	-- 		})
 	-- 		vim.cmd("colorscheme gruvbox")
 	-- 	end,
+	-- },
+	-- NOTE: Gruvbox material theme
+	-- {
+	-- 	"f4z3r/gruvbox-material.nvim",
+	-- 	name = "gruvbox-material",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	opts = {},
 	-- },
 	-- NOTE: Catppucin theme
 	-- {
@@ -1037,6 +1045,27 @@ require("lazy").setup({
 	-- 	-- config = true,
 	-- 	config = function()
 	-- 		vim.cmd.colorscheme("vscode")
+	-- 	end,
+	-- },
+	-- NOTE: Sonomin theme
+	-- {
+	-- 	"Styzex/Sonomin.nvim",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("Sonomin")
+	-- 	end,
+	-- },
+	-- NOTE: Ponokai theme
+	-- {
+	-- 	"shawilly/ponokai",
+	-- 	lazy = false,
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		-- Optionally configure and load the colorscheme
+	-- 		-- directly inside the plugin declaration.
+	-- 		vim.g.sonokai_enable_italic = true
+	-- 		vim.cmd.colorscheme("ponokai")
 	-- 	end,
 	-- },
 	-- end themes configuration
