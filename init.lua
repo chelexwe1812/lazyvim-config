@@ -43,6 +43,18 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Configuración básica de Neovim
+
+-- Establecer el fondo oscuro
+-- vim.opt.background = "dark"
+--
+-- -- Habilitar True Color
+-- vim.opt.termguicolors = true
+--
+-- -- Cargar el esquema de colores
+-- vim.cmd("colorscheme xcode_dark")
+
+-- Otras configuraciones pueden ir aquí
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
@@ -961,23 +973,23 @@ require("lazy").setup({
 	-- 	opts = {},
 	-- },
 	-- NOTE: Catppucin theme
-	-- {
-	-- 	"catppuccin/nvim",
-	-- 	name = "catppuccin",
-	-- 	config = function()
-	-- 		require("catppuccin").setup({
-	-- 			flavour = "mocha", -- Puedes cambiar a 'latte', 'frappe', 'macchiato', o 'mocha'
-	-- 			integrations = {
-	-- 				nvimtree = true,
-	-- 				telescope = true,
-	-- 				-- Elimina la l’nea de lualine si da problemas
-	-- 				-- lualine = true,
-	-- 				-- Habilita m‡s integraciones si es necesario
-	-- 			},
-	-- 		})
-	-- 		vim.cmd("colorscheme catppuccin")
-	-- 	end,
-	-- },
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		config = function()
+			require("catppuccin").setup({
+				flavour = "frappe", -- Puedes cambiar a 'latte', 'frappe', 'macchiato', o 'mocha'
+				integrations = {
+					nvimtree = true,
+					telescope = true,
+					-- Elimina la l’nea de lualine si da problemas
+					-- lualine = true,
+					-- Habilita m‡s integraciones si es necesario
+				},
+			})
+			vim.cmd("colorscheme catppuccin")
+		end,
+	},
 	-- NOTE: Onedark theme
 	-- {
 	-- 	"navarasu/onedark.nvim",
