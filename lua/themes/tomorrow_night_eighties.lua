@@ -1,5 +1,5 @@
-" xcode_dark.vim
-" Basado en el tema oscuro de Xcode con colores ajustados según las capturas
+-- Tomorrow Night - Eighties para Neovim
+-- Basado en el esquema de colores para Sublime Text
 
 local theme = {}
 
@@ -66,3 +66,4 @@ theme.setup = function()
 end
 
 return theme
+

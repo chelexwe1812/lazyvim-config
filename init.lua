@@ -51,8 +51,9 @@ vim.g.maplocalleader = " "
 -- -- Habilitar True Color
 -- vim.opt.termguicolors = true
 --
--- -- Cargar el esquema de colores
+-- Cargar el esquema de colores
 -- vim.cmd("colorscheme xcode_dark")
+require('themes.tomorrow_night_eighties').setup()
 
 -- Otras configuraciones pueden ir aquí
 -- Set to true if you have a Nerd Font installed and selected in the terminal
@@ -973,23 +974,23 @@ require("lazy").setup({
 	-- 	opts = {},
 	-- },
 	-- NOTE: Catppucin theme
-  -- {
-  --   "catppuccin/nvim",
-  --   name = "catppuccin",
-  --   config = function()
-  --     require("catppuccin").setup({
-  --       flavour = "frappe", -- Puedes cambiar a 'latte', 'frappe', 'macchiato', o 'mocha'
-  --       integrations = {
-  --         nvimtree = true,
-  --         telescope = true,
-  --         -- Elimina la l’nea de lualine si da problemas
-  --         -- lualine = true,
-  --         -- Habilita m‡s integraciones si es necesario
-  --       },
-  --     })
-  --     vim.cmd("colorscheme catppuccin")
-  --   end,
-  -- },
+	-- {
+	--   "catppuccin/nvim",
+	--   name = "catppuccin",
+	--   config = function()
+	--     require("catppuccin").setup({
+	--       flavour = "frappe", -- Puedes cambiar a 'latte', 'frappe', 'macchiato', o 'mocha'
+	--       integrations = {
+	--         nvimtree = true,
+	--         telescope = true,
+	--         -- Elimina la l’nea de lualine si da problemas
+	--         -- lualine = true,
+	--         -- Habilita m‡s integraciones si es necesario
+	--       },
+	--     })
+	--     vim.cmd("colorscheme catppuccin")
+	--   end,
+	-- },
 	-- NOTE: Onedark theme
 	-- {
 	-- 	"navarasu/onedark.nvim",
@@ -1080,20 +1081,20 @@ require("lazy").setup({
 	-- 		vim.cmd.colorscheme("ponokai")
 	-- 	end,
 	-- },
-  -- NOTE: Github Theme 
-  {
-    'projekt0n/github-nvim-theme',
-    name = 'github-theme',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      require('github-theme').setup({
-        -- ...
-      })
-
-      vim.cmd('colorscheme github_dark_high_contrast')
-    end,
-  },
+	-- NOTE: Github Theme
+	-- {
+	--   'projekt0n/github-nvim-theme',
+	--   name = 'github-theme',
+	--   lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	--   priority = 1000, -- make sure to load this before all the other start plugins
+	--   config = function()
+	--     require('github-theme').setup({
+	--       -- ...
+	--     })
+	--
+	--     vim.cmd('colorscheme github_dark_high_contrast')
+	--   end,
+	-- },
 	-- end themes configuration
 	-- Highlight todo, notes, etc in comments
 	{
