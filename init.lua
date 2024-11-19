@@ -157,7 +157,7 @@ vim.keymap.set("n", "dd", '"_dd')
 vim.keymap.set("v", "dd", '"_dd')
 
 -- Mapeo del atajo para abrir y cerrar nvim-tree
--- vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 --  See `:help wincmd` for a list of all window commands
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
@@ -221,35 +221,37 @@ require("lazy").setup({
 	--    require('gitsigns').setup({ ... })
 	--
 	-- See `:help gitsigns` to understand what the configuration keys do
-	-- nvim tree para ver el arbol de archivos
-	-- {
-	-- 	"nvim-tree/nvim-tree.lua",
-	-- 	requires = {
-	-- 		"nvim-tree/nvim-web-devicons", -- Opcional, para iconos bonitos
-	-- 	},
-	-- 	config = function()
-	-- 		-- disable netrw at the very start of your init.lua
-	-- 		vim.g.loaded_netrw = 1
-	-- 		vim.g.loaded_netrwPlugin = 1
-	-- 		require("nvim-tree").setup({
-	-- 			view = {
-	-- 				width = 30, -- Ajusta el ancho de la ventana
-	-- 				side = "left", -- Elige el lado donde aparecer‡ el ‡rbol
-	-- 			},
-	-- 			filters = {
-	-- 				dotfiles = false, -- Mostrar archivos ocultos
-	-- 			},
-	-- 			renderer = {
-	-- 				highlight_opened_files = "name",
-	-- 				group_empty = true, -- Agrupa carpetas vac’as
-	-- 			},
-	-- 			-- Configuración para no abrir nvim-tree automáticamente al iniciar
-	-- 			-- open_on_setup = false,
-	-- 			-- open_on_setup_file = false,
-	-- 			open_on_tab = false,
-	-- 		})
-	-- 	end,
-	-- },
+
+	-- NOTE: nvim tree para ver el arbol de archivos
+	{
+		"nvim-tree/nvim-tree.lua",
+		requires = {
+			"nvim-tree/nvim-web-devicons", -- Opcional, para iconos bonitos
+		},
+		config = function()
+			-- disable netrw at the very start of your init.lua
+			vim.g.loaded_netrw = 1
+			vim.g.loaded_netrwPlugin = 1
+			require("nvim-tree").setup({
+				view = {
+					width = 30, -- Ajusta el ancho de la ventana
+					side = "left", -- Elige el lado donde aparecer‡ el ‡rbol
+				},
+				filters = {
+					dotfiles = false, -- Mostrar archivos ocultos
+				},
+				renderer = {
+					highlight_opened_files = "name",
+					group_empty = true, -- Agrupa carpetas vac’as
+				},
+				-- Configuración para no abrir nvim-tree automáticamente al iniciar
+				-- open_on_setup = false,
+				-- open_on_setup_file = false,
+				open_on_tab = false,
+			})
+		end,
+	},
+
 	-- NOTE: git lens config
 	{
 		"Eliot00/git-lens.vim",
