@@ -49,7 +49,7 @@ vim.g.maplocalleader = " "
 -- vim.opt.background = "dark"
 --
 -- -- Habilitar True Color
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 --
 -- Cargar el esquema de colores
 -- vim.cmd("colorscheme xcode_dark")
@@ -1063,27 +1063,27 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Juliana theme
-	{
-		"kaiuri/nvim-juliana",
-		lazy = false,
-		opts = { --[=[ configuration --]=]
-		},
-		-- config = true,
-		config = function()
-			vim.cmd("colorscheme juliana")
-		end,
-	},
-	-- NOTE: VS code theme
 	-- {
-	-- 	"Mofiqul/vscode.nvim",
+	-- 	"kaiuri/nvim-juliana",
 	-- 	lazy = false,
 	-- 	opts = { --[=[ configuration --]=]
 	-- 	},
 	-- 	-- config = true,
 	-- 	config = function()
-	-- 		vim.cmd.colorscheme("vscode")
+	-- 		vim.cmd("colorscheme juliana")
 	-- 	end,
 	-- },
+	-- NOTE: VS code theme
+	{
+		"Mofiqul/vscode.nvim",
+		lazy = false,
+		opts = { --[=[ configuration --]=]
+		},
+		-- config = true,
+		config = function()
+			vim.cmd.colorscheme("vscode")
+		end,
+	},
 	-- NOTE: Sonomin theme
 	-- {
 	-- 	"Styzex/Sonomin.nvim",
