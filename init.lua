@@ -51,9 +51,10 @@ vim.g.maplocalleader = " "
 -- -- Habilitar True Color
 vim.opt.termguicolors = true
 --
+-- NOTE: Esquema de colores local xcode dark
 -- Cargar el esquema de colores
 -- vim.cmd("colorscheme xcode_dark")
--- require('themes.tomorrow_night_eighties').setup()
+-- require("themes.tomorrow_night_eighties").setup()
 
 -- Otras configuraciones pueden ir aquí
 -- Set to true if you have a Nerd Font installed and selected in the terminal
@@ -669,17 +670,6 @@ require("lazy").setup({
 				},
 			}
 
-			require("lazy").setup({
-				{
-					"rhysd/conflict-marker.vim",
-					config = function()
-						-- Configuración opcional, si deseas personalizar mapeos o opciones
-						vim.g.conflict_marker_enable_mappings = 1 -- Habilitar mapeos por defecto
-						-- Puedes personalizar los colores de los marcadores de conflicto aquí si lo deseas
-					end,
-				},
-			})
-
 			-- Ensure the servers and tools above are installed
 			--  To check the current status of installed tools and/or manually install
 			--  other tools, you can run
@@ -901,21 +891,21 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Agrega Nightfox theme
-	-- {
-	-- 	"EdenEast/nightfox.nvim",
-	-- 	config = function()
-	-- 		-- Configura el tema aqui si es necesario
-	-- 		require("nightfox").setup({
-	-- 			options = {
-	-- 				-- Opciones de configuracion del tema
-	-- 				transparent_mode = true,
-	-- 			},
-	-- 		})
-	--
-	-- 		-- Establecer la variante Nordfox
-	-- 		vim.cmd("colorscheme carbonfox")
-	-- 	end,
-	-- },
+	{
+		"EdenEast/nightfox.nvim",
+		config = function()
+			-- Configura el tema aqui si es necesario
+			require("nightfox").setup({
+				options = {
+					-- Opciones de configuracion del tema
+					transparent_mode = true,
+				},
+			})
+
+			-- Establecer la variante Nordfox
+			vim.cmd("colorscheme carbonfox")
+		end,
+	},
 	-- NOTE: Flow colorshceme
 	-- {
 	-- 	"0xstepit/flow.nvim",
@@ -1074,16 +1064,16 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: VS code theme
-	{
-		"Mofiqul/vscode.nvim",
-		lazy = false,
-		opts = { --[=[ configuration --]=]
-		},
-		-- config = true,
-		config = function()
-			vim.cmd.colorscheme("vscode")
-		end,
-	},
+	-- {
+	-- 	"Mofiqul/vscode.nvim",
+	-- 	lazy = false,
+	-- 	opts = { --[=[ configuration --]=]
+	-- 	},
+	-- 	-- config = true,
+	-- 	config = function()
+	-- 		vim.cmd.colorscheme("vscode")
+	-- 	end,
+	-- },
 	-- NOTE: Sonomin theme
 	-- {
 	-- 	"Styzex/Sonomin.nvim",
