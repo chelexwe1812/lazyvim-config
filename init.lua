@@ -56,6 +56,10 @@ vim.opt.termguicolors = true
 -- vim.cmd("colorscheme xcode_dark")
 -- require("themes.tomorrow_night_eighties").setup()
 
+vim.cmd([[colorscheme panda]])
+-- vim.cmd("colorscheme xcode_dark")
+-- require("themes.tomorrow_night_eighties").setup()
+
 -- Otras configuraciones pueden ir aquí
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -891,21 +895,26 @@ require("lazy").setup({
 	-- 	end,
 	-- },
 	-- NOTE: Agrega Nightfox theme
-	{
-		"EdenEast/nightfox.nvim",
-		config = function()
-			-- Configura el tema aqui si es necesario
-			require("nightfox").setup({
-				options = {
-					-- Opciones de configuracion del tema
-					transparent_mode = true,
-				},
-			})
-
-			-- Establecer la variante Nordfox
-			vim.cmd("colorscheme carbonfox")
-		end,
-	},
+	-- {
+	-- 	"EdenEast/nightfox.nvim",
+	-- 	config = function()
+	-- 		-- Configura el tema aqui si es necesario
+	-- 		require("nightfox").setup({
+	-- 			options = {
+	-- 				-- Opciones de configuracion del tema
+	-- 				transparent_mode = true,
+	-- 			},
+	-- 		})
+	--
+	-- 		-- Establecer la variante Nordfox
+	-- 		vim.cmd("colorscheme carbonfox")
+	-- 	end,
+	-- },
+	-- NOTE: Panda theme
+	-- {
+	-- 	-- { "PandaSyntax/panda-syntax", lazy = true },
+	-- 	vim.cmd([[colorscheme panda]]),
+	-- },
 	-- NOTE: Flow colorshceme
 	-- {
 	-- 	"0xstepit/flow.nvim",
